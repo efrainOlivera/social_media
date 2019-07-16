@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #5d34a4;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* style the container */
+  .container {
+    position: relative;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 0 30px 0;
+  } 
+
+  /* style inputs and link buttons */
+  input,
+  .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+  }
+
+  input:hover,
+  .btn:hover {
+    opacity: 1;
+  }
+
+  /* add appropriate colors to fb, twitter and google buttons */
+  .fb {
+    background-color: #3B5998;
+    color: white;
+  }
+
+  .twitter {
+    background-color: #55ACEE;
+    color: white;
+  }
+
+  .google {
+    background-color: #dd4b39;
+    color: white;
+  }
+
+  /* style the submit button */
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Two-column layout */
+  .col {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* vertical line */
+  .vl {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #ddd;
+    height: 550px;
+  }
+
+  /* text inside the vertical line */
+  .vl-innertext {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 8px 10px;
+  }
+
+  /* hide some text on medium and large screens */
+  .hide-md-lg {
+    display: none;
+  }
+
+  /* bottom container */
+  .bottom-container {
+    text-align: center;
+    background-color: #666;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 650px) {
+    .col {
+      width: 100%;
+      margin-top: 0;
+    }
+    /* hide the vertical line */
+    .vl {
+      display: none;
+    }
+    /* show the hidden text on small screens */
+    .hide-md-lg {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Add padding to containers */
+  .container {
+    padding: 16px;
+    background-color: white;
+  }
+
+  /* Full-width input fields */
+  input[type=text], input[type=password], input[type=username], input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+
+  .registerbtn:hover {
+    opacity: 1;
+  }
+
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  h1 {
+    color: white;
+  }
+
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  </style>
+  </head>
+  <body>
+  <h1>Famunion</h1>
+  <div class="container">
+      <div class="row">
+        <h2 style="text-align:center">Welcome to Famunion a place where family can communicate and share day to day experiences</h2>
+        <strong style="color: red"><h2><%= flash[:restricted] %></h2></strong>
+        <div class="vl">
+          <span class="vl-innertext">or</span>
+        </div>
+        <div class="col">
+          <!-- Registration form section -->
+          <strong style="color: red"><%= flash[:error] %></strong>
+          <strong style="color: blue"><%= flash[:goodBY] %></strong> 
+          <form class="logreg" action="/registration" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <div class="container">
+              <h2>Register</h2>
+              <p>Please fill in this form to create an account.</p>
+              <hr>
+              <!-- Name input and connection -->
+              <label for="name"><b>Name</b></label>
+              <input type="username" placeholder="Enter name" name="user[name]" required>
+
+              <!-- Email input and location -->
+              <label for="email"><b>Email</b></label>
+              <input type="email" placeholder="Enter Email" name="user[email]" required>
+
+              <!-- Password inout and location -->
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="user[password]" required>
+
+              <!-- Password confirmationa and connection  -->
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="user[password_confirmation" required>
+              <strong style="color: red"><%= flash[:password] %></strong>
+              <hr>
+              <input type="submit" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <div class="hide-md-lg">
+          <!--  Login page section -->
+          </div>
+          <div class="alert alert-success">
+            <strong style="color: red"><%= flash[:notice] %></strong> 
+          </div>
+            <h2>Login</h2>
+            <p>Fill email and password to login.</p>
+
+            <form action="/land" method="POST">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="password" name="password" placeholder="Password" required>
+              <input type="submit" value="Login">
+            </form>
+          </div>
+      </div>
+  </div>
+  <div class="bottom-container">
+    <div class="row">
+      <div class="col">
+        <a href="#" style="color:white" class="btn">T H A N K S</a>
+      </div>
+      <div class="col">
+        <a href="#" style="color:white" class="btn">W E L C O M E</a>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
