@@ -59,8 +59,8 @@
       <span class="close">&times;</span>
       <h4>Hello!</h4>
       <P>My name is Efrain olivera, but friends know me as "I'm a battery".</P>
-      <P>I'm a full stack web developer, familiar with HTML, CSS, JavaScript, Python/flask, Ruby&Rails/vagrant, Mean/node.js/Express/Mongo/Angular which are all frameworks and programming languages, I'm self taught and recently completed a coding bootcamp.</P>
-      <p>This project/app is a social media place where family/friends can communicate and share day to day experiences. The App has been created with Html/css, W3.css templates, javaScript as front end and Ruby&Rails, vagrant as the back end</p>
+      <P>I'm a full stack web developer, familiar with HTML, CSS, JavaScript, Python/flask, Ruby&Rails/vagrant, Mean/node.js, Express/Mongo/Angular. Frameworks and programming languages, I'm self taught and recently completed a coding bootcamp.</P>
+      <p>This project/app is a social media application, where family/friends can communicate and share day to day experiences. The App has been created with Html/css, W3.css templates, javaScript as front end and Ruby&Rails and vagrant as the back end.</p>
       <p>Note: App is at 50% completion, testing and updates are currently in process. Thank you</p>
     </div>
   </div>
@@ -72,20 +72,22 @@
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
     // When the user first logs in open the modal
-    <% if session[:modal] === true %>
+    <% if session[:number] === 99 %>
     $(window).load(function(){
       modal.style.display = "block";
-      session[:modal] = false
     });
     <% end %>
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
       modal.style.display = "none";
+      <% session[:number] = 100 %>
+      
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
       if (event.target == modal) {
         modal.style.display = "none";
+        <% session[:number] = 100 %>
       }
     }
   </script>

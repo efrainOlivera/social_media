@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 		puts @usr.errors.full_messages
 		session[:id]=@usr.id
 		if @usr.save 
+			session[:number] = 99
 			redirect_to "/land"
 		else
 			flash[:error] = "Enter valid information. Name: 'only letters' Email: example@yahoo.com"
@@ -33,8 +34,6 @@ class UsersController < ApplicationController
 	end
 	# ---------- user home page and information/messages display -------
 	def land
-		session[:modal] = true
-		flash[:avatar] = "select profile"
 		if session[:id] == ()
 			redirect_to "/"
 		else
@@ -74,7 +73,7 @@ class UsersController < ApplicationController
 			@commentUpdate.update(mss_params)
 			redirect_to "/land"
 		else
-			flash[:notUser] = "Can only update personal comment"
+			flash[:denied] = "Access denied, I see what you are doing!"
 			redirect_to "/land"
 		end
 	end
@@ -91,7 +90,8 @@ class UsersController < ApplicationController
 		@iden_user = User.find(session[:id])
 		@user_find = User.find(params[:id])
 		if @iden_user.id != @user_find.id
-			redirect_to "/user/#{@iden_user.id}/edit"
+			redirect_to "/"
+			flash[:denied] = "Access denied, I see what you are doing!"
 		elsif @user_find.update(user_change)
 			redirect_to "/land"
 		else
