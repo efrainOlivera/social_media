@@ -112,7 +112,7 @@
         <div class="w3-card w3-round w3-white">
           <div class="w3-container">
             <h4 class="w3-center"><%= @find.name %></h4>
-            <p class="w3-center"><img src= '<%= @find.avatar %>' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p> 
+            <p class="w3-center"><img src= '/assets/<%= @find.avatar %>' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p> 
             <hr>
             <a href="/user/<%= @find.id %>/edit"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme" ></i></a>Edit/profile
             <p></i>Email: <%= @find.email%></p>
@@ -126,7 +126,11 @@
           <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Friends</button>
           <div id="Demo1" class="w3-hide w3-container">
             <% @current_users.each do |info| %>
-            <p class="w3-center"><img src="https://www.w3schools.com/howto/img_avatar.png" class="w3-circle" style="height:30px; width:30px; float: left; margin-right: 10px;" alt="Avatar"></p><%= info.name %>
+            <% if info.avatar === nil %>
+              <p class="w3-center"><img src="https://www.w3schools.com/howto/img_avatar.png" class="w3-circle" style="height:30px; width:30px; float: left; margin-right: 10px;" alt="Avatar"></p><%= info.name %>
+              <% else %>
+                <p class="w3-center"><img src="/assets/<%= info.avatar %>" class="w3-circle" style="height:30px; width:30px; float: left; margin-right: 10px;" alt="Avatar"></p><%= info.name %>
+                <% end %>
             <% end %>
           </div>
          
@@ -165,7 +169,11 @@
         <!-- display all comments -->
         <% @users.each do |mss| %>
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
-          <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+          <% if mss.user.avatar === nil %>
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px;">
+          <% else %>
+            <img src="/assets/<%= mss.user.avatar %>" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px; height: 50px;">
+          <% end %>
           <h4> <%= mss.user.name %> </h4>
           <span class="w3-right w3-opacity"> <%= mss.created_at %></span>
           <h4>  </h4><br>

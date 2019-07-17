@@ -25,7 +25,7 @@
 		
 		<div class="w3-container">
 			<h4 class="w3-center"><%= @user_display.name %></h2></h4>
-			<p class="w3-center"><img src="https://www.w3schools.com/howto/img_avatar.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+			<p class="w3-center"><img src="/assets/<%= @user_display.avatar %>" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
 		</div>
 		<br>	
 		<section style="text-align: center;">
@@ -45,7 +45,7 @@
 					<input style= "border: 1px solid #ccc; border-radius: 4px;"type="text/html" id= "branch" name= "user[email]" value="<%= @user_display.email %>">
 				</div>
 
-				<strong style="color: red"><%= flash[:noUpdate] %></strong> 
+				<strong style="color: red"><%= flash[:taken_email] %></strong> 
 				<br>
 				<input type="submit" class="w3-button w3-theme" value="Update">
 			</form>

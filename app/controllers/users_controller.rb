@@ -92,10 +92,13 @@ class UsersController < ApplicationController
 		@user_find = User.find(params[:id])
 		if @iden_user.id != @user_find.id
 			redirect_to "/user/#{@iden_user.id}/edit"
-		else
-			@user_find.update(user_change)
+		elsif @user_find.update(user_change)
 			redirect_to "/land"
+		else
+			redirect_to "/user/#{@iden_user.id}/edit"
+			flash[:taken_email] = "Use a different email"
 		end
+
 	end
 	# ------User account and messages in general will be deleted, Note: both user and messages tables are connected------
 	def delete
