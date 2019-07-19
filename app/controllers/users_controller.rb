@@ -68,7 +68,6 @@ class UsersController < ApplicationController
 	# ----------message update, hidden/authenticity token type hidden-------
 	def mssUpdate
 		@commentUpdate = Mss.find(params[:id])
-		
 		if session[:id] === @commentUpdate.user_id
 			@commentUpdate.update(mss_params)
 			redirect_to "/land"
@@ -98,7 +97,6 @@ class UsersController < ApplicationController
 			redirect_to "/user/#{@iden_user.id}/edit"
 			flash[:taken_email] = "Use a different email"
 		end
-
 	end
 	# ------User account and messages in general will be deleted, Note: both user and messages tables are connected------
 	def delete
@@ -120,11 +118,10 @@ class UsersController < ApplicationController
 		end
 
 		def user_change
-			params.require(:user).permit(:name, :email)
+			params.require(:user).permit(:name, :email, :avatar)
 		end
 
 		def mss_params
 			params.require(:mss).permit(:messages)
 		end
 end
-

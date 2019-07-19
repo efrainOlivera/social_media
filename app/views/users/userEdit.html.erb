@@ -18,38 +18,173 @@
 			border-bottom: 1px solid #333333;
 			border-left: 1px solid #CCCCCC;
 		}
-		</style>
+		input[type=checkbox] {
+			display:none;
+		} 
+		input#image1[type=checkbox] + label
+		{
+			background-image: url(/assets/turbo.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image2[type=checkbox] + label
+		{
+			background-image: url(/assets/shoes.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image3[type=checkbox] + label
+		{
+			background-image: url(/assets/guy3.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image4[type=checkbox] + label
+		{
+			background-image: url(/assets/guy1.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image5[type=checkbox] + label
+		{
+			background-image: url(/assets/cartoon.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image6[type=checkbox] + label
+		{
+			background-image: url(/assets/bananas.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image1[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image2[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image3[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image4[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image5[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image6[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+	</style>
 	<body class="w3-theme-l5" style="">
 		<a href="/land" class="w3-button w3-theme">Home</a>
 		<a  style= "float: right;"href="/delete/delete user here" data-method="delete" class="w3-button w3-theme">Delete User</a>
-		
 		<div class="w3-container">
 			<h4 class="w3-center"><%= @user_display.name %></h2></h4>
+			<% if @user_display.avatar === nil %>
+			<p class="w3-center"><img src= 'https://www.w3schools.com/howto/img_avatar.png' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p>
+			<% else %>
 			<p class="w3-center"><img src="/assets/<%= @user_display.avatar %>" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+			<% end %>
 		</div>
 		<br>	
 		<section style="text-align: center;">
-
 	        <form action="/user/<%= @user_display.id %>/swap" method="POST">
 	        	<input type="hidden" name="_method" value="patch">
 	        	<input type="hidden" name="authenticity_token"value="<%= form_authenticity_token %>">
-
+	        	<div class="form-group">
+	        		<input type="checkbox" name='user[avatar]' id="image1" value="turbo.jpeg" /><label for="image1"></label>
+	        		<input type="checkbox" name='user[avatar]' id="image2" value="shoes.jpeg"/><label for="image2"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image3" value="guy3.jpeg"/><label for="image3"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image4" value="guy1.jpeg"/><label for="image4"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image5" value="cartoon.jpeg"/><label for="image5"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image6" value="bananas.jpeg"/><label for="image6"></label>
+	        	</div>
 	        	<div class="form-group">
 	        		<label>Name</label>
 	        		<input style= "border: 1px solid #ccc; border-radius: 4px;" type="text/html" id="branch" name= "user[name]" value="<%= @user_display.name %>">
 	        	</div>
 				<br>
-
 				<div class="form-group">
 					<label>Email</label>
 					<input style= "border: 1px solid #ccc; border-radius: 4px;"type="text/html" id= "branch" name= "user[email]" value="<%= @user_display.email %>">
 				</div>
-
 				<strong style="color: red"><%= flash[:taken_email] %></strong> 
 				<br>
 				<input type="submit" class="w3-button w3-theme" value="Update">
 			</form>
-
 		</section>
 	</body>
 </html> 
