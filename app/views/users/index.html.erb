@@ -174,7 +174,7 @@
           <form action="/land" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
             <input type="submit" value="Login">
           </form>
         </div>
@@ -194,16 +194,16 @@
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
             <!-- Name input and connection -->
             <label for="name"><b>Nombre</b></label>
-            <input type="username" placeholder="Enter name" name="user[name]" required>
+            <input type="username" placeholder="Ingrese su nombre" name="user[name]" required>
             <!-- Email input and location -->
             <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="user[email]" required>
+            <input type="email" placeholder="Ingrese Email" name="user[email]" required>
             <!-- Password inout and location -->
             <label for="psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Enter Password" name="user[password]" required>
+            <input type="password" placeholder="Ingrese contraseña" name="user[password]" required>
             <!-- Password confirmationa and connection  -->
             <label for="psw-repeat"><b>Repite la contraseña</b></label>
-            <input type="password" placeholder="Repeat Password" name="user[password_confirmation" required>
+            <input type="password" placeholder="Repite contraseña" name="user[password_confirmation" required>
             <strong style="color: red"><%= flash[:password] %></strong>
             <hr>
             <input type="submit" class="btn btn-primary">
