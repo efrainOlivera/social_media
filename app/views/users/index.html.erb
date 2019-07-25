@@ -173,7 +173,9 @@
           <p>Rellene el correo electrónico y la contraseña para iniciar sesión.</p>
           <form action="/land" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <label for="name"><b>Email</b></label>
             <input type="email" name="email" placeholder="Email" required>
+            <label for="name"><b>Contraseña</b></label>
             <input type="password" name="password" placeholder="Contraseña" required>
             <input type="submit" value="Login">
           </form>
