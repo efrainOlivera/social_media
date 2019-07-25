@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
+</head>
+<style>
   body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #7cad06;
+    background-color: #5d34a4;
   }
   * {
     box-sizing: border-box;
@@ -13,9 +14,8 @@
   /* style the container */
   .container {
     position: relative;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px 0 30px 0;
+    border-radius: 20px;
+
   } 
   /* style inputs and link buttons */
   input,
@@ -96,6 +96,7 @@
     .col {
       width: 100%;
       margin-top: 0;
+      padding: 0 10px;
     }
     /* hide the vertical line */
     .vl {
@@ -159,72 +160,57 @@
     background-color: #f1f1f1;
     text-align: center;
   }
-  </style>
-  </head>
-  <body>
-  <h1>Famunion</h1>
+</style>
+<body>
+  <h1>famjunto</h1>
   <div class="container">
-      <div class="row">
-        <h2 style="text-align:center">Welcome to Famunion a place where family can communicate and share day to day experiences</h2>
-        <strong style="color: red"><h2><%= flash[:denied] %></h2></strong>
-        <div class="vl">
-          <span class="vl-innertext">or</span>
-        </div>
-        <div class="col">
-          <!-- Registration form section -->
-          <strong style="color: red"><%= flash[:error] %></strong>
-          <strong style="color: blue"><%= flash[:goodBY] %></strong> 
-          <form class="logreg" action="/registration" method="POST">
+    <div class="row">
+      <h2 style="text-align:center">Bienvenido a fanjunto, un lugar donde la familia puede comunicarse y compartir experiencias cotidianas.</h2>
+      <div class="col">
+        <strong style="color: red"><%= flash[:notice] %></strong>
+        <div class="container">
+          <h2>Login</h2>
+          <p>Rellene el correo electrónico y la contraseña para iniciar sesión.</p>
+          <form action="/land" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <div class="container">
-              <h2>Register</h2>
-              <p>Fill this form to create an account.</p>
-              <hr>
-              <!-- Name input and connection -->
-              <label for="name"><b>Name</b></label>
-              <input type="username" placeholder="Enter name" name="user[name]" required>
-              <!-- Email input and location -->
-              <label for="email"><b>Email</b></label>
-              <input type="email" placeholder="Enter Email" name="user[email]" required>
-              <!-- Password inout and location -->
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="user[password]" required>
-              <!-- Password confirmationa and connection  -->
-              <label for="psw-repeat"><b>Repeat Password</b></label>
-              <input type="password" placeholder="Repeat Password" name="user[password_confirmation" required>
-              <strong style="color: red"><%= flash[:password] %></strong>
-              <hr>
-              <input type="submit" class="btn btn-primary">
-            </div>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
           </form>
         </div>
-        <div class="col">
-          <div class="hide-md-lg">
-          <!--  Login page section -->
-          </div>
-          <div class="alert alert-success">
-            <strong style="color: red"><%= flash[:notice] %></strong> 
-          </div>
-            <h2>Login</h2>
-            <p>Fill email and password to login.</p>
-            <form action="/land" method="POST">
-              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-              <input type="email" name="email" placeholder="Email" required>
-              <input type="password" name="password" placeholder="Password" required>
-              <input type="submit" value="Login">
-            </form>
-          </div>
       </div>
-  </div>
-  <div class="bottom-container">
-    <div class="row">
-      <div class="col">
-        <a href="#" style="color:white" class="btn">T H A N K S</a>
+      <strong style="color: red"><h2><%= flash[:denied] %></h2></strong>
+      <div class="vl">
+        <span class="vl-innertext">or</span>
       </div>
       <div class="col">
-        <a href="#" style="color:white" class="btn">W E L C O M E</a>
+        <!-- Registration form section -->
+        <strong style="color: red"><%= flash[:error] %></strong>
+        <div class="container">
+          <h2>Registro</h2>
+          <p>Rellene este formulario para crear una cuenta.</p>
+          <hr>
+          <form class="logreg" action="/registration" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <!-- Name input and connection -->
+            <label for="name"><b>Nombre</b></label>
+            <input type="username" placeholder="Enter name" name="user[name]" required>
+            <!-- Email input and location -->
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="user[email]" required>
+            <!-- Password inout and location -->
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" placeholder="Enter Password" name="user[password]" required>
+            <!-- Password confirmationa and connection  -->
+            <label for="psw-repeat"><b>Repite la contraseña</b></label>
+            <input type="password" placeholder="Repeat Password" name="user[password_confirmation" required>
+            <strong style="color: red"><%= flash[:password] %></strong>
+            <hr>
+            <input type="submit" class="btn btn-primary">
+          </form>
+          </div>
       </div>
     </div>
   </div>
-  </body>
+</body>
 </html>

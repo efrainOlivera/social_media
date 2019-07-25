@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-w3schools.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-deep-purple.css">
  
   <style>
     html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
@@ -56,11 +56,11 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h4>Hello!</h4>
-      <P>My name is Efrain olivera, but friends know me as "I'm a battery".</P>
-      <P>I'm a full stack web developer, familiar with HTML, CSS, JavaScript, Python/flask, Ruby&Rails/vagrant, Mean/node.js, Express/Mongo/Angular. Frameworks and programming languages, I'm self taught and recently completed a coding bootcamp.</P>
-      <p>This project/app is a social media application, where family/friends can communicate and share day to day experiences. The App has been created with Html/css, W3.css templates, javaScript as front end and Ruby&Rails as the back end. App is running on AWS, ubuntub OS and post as the data base.</p>
-      <p>Note: App is at 50% completion, testing and updates are currently in process. Thank you</p>
+      <h4>¡Hola!</h4>
+      <P>Mi nombre es Efrain olivera, pero mis amigos me conocen como "Soy una batería".</P>
+      <P>Soy un desarrollador web de pila completa, familiarizado con HTML, CSS, JavaScript, Python / flask, Ruby & Rails / vagrant, Mean / node.js, Express / Mongo / Angular. Frameworks y lenguajes de programación, soy autodidacta y recientemente completé un bootcamp de codificación.</P>
+      <p>Este proyecto / aplicación es una aplicación de redes sociales, donde familiares / amigos pueden comunicarse y compartir experiencias cotidianas. La aplicación se ha creado con Html / css, plantillas W3.css, javaScript como parte frontal y Ruby & Rails como parte posterior. La aplicación se ejecuta en AWS, ubuntub OS y se publica como la base de datos.</p>
+      <p>Nota: La aplicación está al 50% de finalización, las pruebas y actualizaciones están actualmente en proceso. Gracias</p>
     </div>
   </div>
   <script>
@@ -94,7 +94,7 @@
   <div class="w3-top">
     <div class="w3-bar w3-theme-d1 w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d1" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d1"><i class="fa fa-home w3-margin-right"></i>Famunion</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-theme-d1"><i class="fa fa-home w3-margin-right"></i>famjunto</a>
       <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Account Settings"><i class="fa fa-user"></i></a>
     </div>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"></a>
@@ -119,15 +119,15 @@
             <p class="w3-center"><img src= '/assets/<%= @find.avatar %>' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p> 
             <% end %>
             <hr>
-            <a href="/user/<%= @find.id %>/edit"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme" ></i></a>Edit/profile
+            <a href="/user/<%= @find.id %>/edit"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme" ></i></a>Editar perfil
             <p></i>Email: <%= @find.email%></p>
-            <p></i>Created: <%= @find.created_at %></p>
+            <p></i>Creado: <%= @find.created_at %></p>
           </div>
         </div>
         <br>
         <div class="w3-card w3-round">
         <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Friends</button>
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Amigos</button>
           <div id="Demo1" class="w3-hide w3-container">
             <% @current_users.each do |info| %>
             <% if info.avatar === nil %>
@@ -137,12 +137,12 @@
                 <% end %>
             <% end %>
           </div> 
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> Mis fotos</button>
           <div id="Demo3" class="w3-hide w3-container">
          <div class="w3-row-padding">
          <br>
            <div class="w3-half">
-            <P>Still working on it, coming soon!</P>
+            <P>Sigo trabajando en ello, pronto!</P>
            </div>
          </div>
           </div>
@@ -156,13 +156,13 @@
           <div class="w3-col m12">
             <div class="w3-card w3-round w3-white">
               <div class="w3-container w3-padding">
-                <h6 class="w3-opacity">Famcomments</h6>
+                <h6 class="w3-opacity">famcomentarios</h6>
                 <form action="/posts/new/<%= @find.id %>" method="post">
                   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">  
                   <input type="text" name="content" contenteditable="true" class="w3-border w3-padding" style="width: 100%">
                   <br>
                   <br>
-                  <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i> &nbsp;Post</button>
+                  <button type="submit" class="w3-button w3-theme"><i class="fa fa-pencil"></i> &nbsp;Enviar</button>
                 </form>
               </div>
             </div>
@@ -187,10 +187,9 @@
               </form> -->
               <br>
               <form method="post">
-              <a href="/delete/<%= mss.id %>/mss" data-method="delete" <% if mss.user_id != session[:id] %> style= "display: none;" <% end %> >Delete comment</a>
+              <a href="/delete/<%= mss.id %>/mss" data-method="delete" <% if mss.user_id != session[:id] %> style= "display: none;" <% end %> >Eliminar comentario</a>
               <br>
-              <a href="/edit/<%= mss.id %>/mss" <% if mss.user_id != session[:id] %> style= "display: none;" <% end %>>Edit comment</a>
-
+              <a href="/edit/<%= mss.id %>/mss" <% if mss.user_id != session[:id] %> style= "display: none;" <% end %>>Editar comentario</a>
               </div>
              <!--  <p># likes</p> -->
             </div>
@@ -201,7 +200,7 @@
       <div class="w3-col m2">
         <div class="w3-card w3-round w3-white w3-center">
           <div class="w3-container">
-            <p>Upcoming reunions</p>
+            <p>Próximas reuniones</p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/GoogleMaps_logo.svg/1011px-GoogleMaps_logo.svg.png" alt="Forest" style="width:100%;">
             <p><strong></strong></p>
             <p>Coming soon</p>
@@ -211,7 +210,7 @@
         <br>
         <div class="w3-card w3-round w3-white w3-center">
           <div class="w3-container">
-            <p>Friend request</p>
+            <p>Solicitud de amistad</p>
             <img src="/w3images/avatar6.png" alt="Avatar" style="width:50%"><br>
             <span>Coming soon</span>
             <div class="w3-row w3-opacity">
@@ -230,7 +229,7 @@
   <br>
   <!-- Footer -->
   <footer class="w3-container w3-theme-d3 w3-padding-16">
-    <h5><a href="/">Log out</a></h5>
+    <h5><a href="/">Cerrar sesión</a></h5>
   </footer>
   <script>
   // Accordion

@@ -7,9 +7,7 @@ class UsersController < ApplicationController
 	# -------login information--------
 	def login
 		@usr = User.find_by(email: params[:email])
-	
 		if @usr && @usr.authenticate(params[:password])
-			puts "inside here"
 			session[:id] = @usr.id
 			redirect_to "/land"
 		else
@@ -62,7 +60,8 @@ class UsersController < ApplicationController
 	def editMss
 		@commentDisplay = Mss.find(params[:id])
 		if session[:id] != @commentDisplay.user_id
-			redirect_to "/land"
+			flash[:denied] = "Access denied, I see what you are doing!"
+			redirect_to "/"
 		end
 	end
 	# ----------message update, hidden/authenticity token type hidden-------
@@ -73,15 +72,15 @@ class UsersController < ApplicationController
 			redirect_to "/land"
 		else
 			flash[:denied] = "Access denied, I see what you are doing!"
-			redirect_to "/land"
+			redirect_to "/"
 		end
 	end
 	# ------Edit user href rout, rout will carry user id/query from land function-----
 	def userEdit
 		@user_display = User.find(params[:id])
 		if session[:id] != @user_display.id
+			flash[:denied] = "Access denied, I see what you are doing!"
 			redirect_to "/"
-			flash[:restricted] = "Access denied!"
 		end
 	end
 	# -------User information update through form with hidden/input-----
