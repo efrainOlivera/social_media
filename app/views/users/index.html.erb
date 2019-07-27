@@ -160,16 +160,73 @@
     background-color: #f1f1f1;
     text-align: center;
   }
+  /*--------------------- Modal in index page information about me ---------------------*/
+
+  /* Centering edit comment box */
+  .center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 </style>
+
 <body>
   <h1>famjunto</h1>
   <div class="container">
     <div class="row">
-      <h2 style="text-align:center">Bienvenido a fanjunto, un lugar donde la familia puede comunicarse y compartir experiencias cotidianas.</h2>
+      <h2 style="text-align:center">Bienvenido a famjunto, un lugar donde la familia puede comunicarse y compartir experiencias cotidianas.</h2>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn">Quien soy yo?</button>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <P>Mi nombre es Efrain olivera ramirez.</P>
+          <P>Soy un desarrollador web de pila completa, familiarizado con HTML, CSS, JavaScript, Python / flask, Ruby & Rails / vagrant, Mean / node.js, Express / Mongo / Angular. Frameworks y lenguajes de programación, soy autodidacta y recientemente completé un bootcamp de codificación.</P>
+          <p>Este proyecto / aplicación es una aplicación de redes sociales, donde familiares / amigos pueden comunicarse y compartir experiencias cotidianas. La aplicación se ha creado con Html / css, plantillas W3.css, javaScript como parte frontal y Ruby & Rails como parte posterior. La aplicación se ejecuta en AWS, ubuntub OS y se publica como la base de datos.</p>
+          <p>Nota: La aplicación está al 50% de finalización, las pruebas y actualizaciones están actualmente en proceso. Gracias</p>
+        </div>
+      </div>
       <div class="col">
         <strong style="color: red"><%= flash[:notice] %></strong>
         <div class="container">
-          <h2>Login</h2>
+          <h2>Iniciar sesión</h2>
           <p>Rellene el correo electrónico y la contraseña para iniciar sesión.</p>
           <form action="/land" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -215,4 +272,31 @@
     </div>
   </div>
 </body>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </html>

@@ -26,7 +26,6 @@
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
-
     /* Modal Content */
     .modal-content {
       background-color: #fefefe;
@@ -35,7 +34,6 @@
       border: 1px solid #888;
       width: 80%;
     }
-
     /* The Close Button */
     .close {
       color: #aaaaaa;
@@ -43,13 +41,20 @@
       font-size: 28px;
       font-weight: bold;
     }
-
     .close:hover,
     .close:focus {
       color: #000;
       text-decoration: none;
       cursor: pointer;
     }
+    /* ---------comment box sizing--------- */
+    .w3-row-padding{
+      padding: 0;
+    }
+    .custom-margin {
+      margin: 16px 8px;
+    }
+
   </style>
   <!-- The Modal -->
   <div id="myModal" class="modal">
@@ -100,8 +105,10 @@
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"></a>
   </div>
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d1 w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large"><%= @find.name %></a>
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">......</a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Cerrar sesión</a>
   </div>
   <!-- Page Container -->
   <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
@@ -116,7 +123,7 @@
             <% if @find.avatar === nil %>
             <p class="w3-center"><img src= 'https://www.w3schools.com/howto/img_avatar.png' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p> 
             <% else %>
-            <p class="w3-center"><img src= '/assets/<%= @find.avatar %>' class="w3-circle" style="height:106px;width:106px" alt="Avatar"><br></p> 
+            <p class="w3-center"><img src= '/assets/<%= @find.avatar %>' class="w3-circle" style="height:140px;width:140px" alt="Avatar"><br></p> 
             <% end %>
             <hr>
             <a href="/user/<%= @find.id %>/edit"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme" ></i></a>Editar perfil
@@ -170,7 +177,7 @@
         </div>
         <!-- display all comments -->
         <% @users.each do |mss| %>
-        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <div class="w3-container w3-card w3-white w3-round custom-margin"><br>
           <% if mss.user.avatar === nil %>
             <img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:50px;">
           <% else %>
