@@ -1,277 +1,277 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #5d34a4;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  /* style the container */
-  .container {
-    position: relative;
-    border-radius: 20px;
-
-  } 
-  /* style inputs and link buttons */
-  input,
-  .btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
-    margin: 5px 0;
-    opacity: 0.85;
-    display: inline-block;
-    font-size: 17px;
-    line-height: 20px;
-    text-decoration: none; /* remove underline from anchors */
-  }
-  input:hover,
-  .btn:hover {
-    opacity: 1;
-  }
-  /* add appropriate colors to fb, twitter and google buttons */
-  .fb {
-    background-color: #3B5998;
-    color: white;
-  }
-  /* style the submit button */
-  input[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  /* Two-column layout */
-  .col {
-    float: left;
-    width: 50%;
-    margin: auto;
-    padding: 0 50px;
-    margin-top: 6px;
-  }
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  /* vertical line */
-  .vl {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    border: 2px solid #ddd;
-    height: 550px;
-  }
-  /* text inside the vertical line */
-  .vl-innertext {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    padding: 8px 10px;
-  }
-  /* hide some text on medium and large screens */
-  .hide-md-lg {
-    display: none;
-  }
-  /* bottom container */
-  .bottom-container {
-    text-align: center;
-    background-color: #666;
-    border-radius: 0px 0px 4px 4px;
-  }
-  /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 650px) {
-    .col {
-      width: 100%;
-      margin-top: 0;
-      padding: 0 10px;
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>Social Media Mockup Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #7eb63d;
     }
-    /* hide the vertical line */
+    * {
+      box-sizing: border-box;
+    }
+    /* style the container */
+    .container {
+      position: relative;
+      border-radius: 20px;
+    } 
+    /* style inputs and link buttons */
+    input,
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      margin: 5px 0;
+      opacity: 0.85;
+      display: inline-block;
+      font-size: 17px;
+      line-height: 20px;
+      text-decoration: none; /* remove underline from anchors */
+    }
+    input:hover,
+    .btn:hover {
+      opacity: 1;
+    }
+    /* add appropriate colors to fb, twitter and google buttons */
+    .fb {
+      background-color: #3B5998;
+      color: white;
+    }
+    /* style the submit button */
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    /* Two-column layout */
+    .col {
+      float: left;
+      width: 50%;
+      margin: auto;
+      padding: 0 50px;
+      margin-top: 6px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    /* vertical line */
     .vl {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      border: 2px solid #ddd;
+      height: 550px;
+    }
+    /* text inside the vertical line */
+    .vl-innertext {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      padding: 8px 10px;
+    }
+    /* hide some text on medium and large screens */
+    .hide-md-lg {
       display: none;
     }
-    /* show the hidden text on small screens */
-    .hide-md-lg {
-      display: block;
+    /* bottom container */
+    .bottom-container {
+      text-align: center;
+      background-color: #666;
+      border-radius: 0px 0px 4px 4px;
+    }
+    /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 650px) {
+      .col {
+        width: 100%;
+        margin-top: 0;
+        padding: 0 10px;
+      }
+      /* hide the vertical line */
+      .vl {
+        display: none;
+      }
+      /* show the hidden text on small screens */
+      .hide-md-lg {
+        display: block;
+        text-align: center;
+      }
+    }
+    * {
+      box-sizing: border-box;
+    }
+    /* Add padding to containers */
+    .container {
+      padding: 16px;
+      background-color: white;
+    }
+    /* Full-width input fields */
+    input[type=text], input[type=password], input[type=username], input[type=email] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+    }
+    input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+    /* Overwrite default styles of hr */
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+    /* Set a style for the submit button */
+    .registerbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+    .registerbtn:hover {
+      opacity: 1;
+    }
+    /* Add a blue text color to links */
+    a {
+      color: dodgerblue;
+    }
+    h1 {
+      color: white;
+    }
+    /* Set a grey background color and center the text of the "sign in" section */
+    .signin {
+      background-color: #f1f1f1;
       text-align: center;
     }
-  }
-  * {
-    box-sizing: border-box;
-  }
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-    background-color: white;
-  }
-  /* Full-width input fields */
-  input[type=text], input[type=password], input[type=username], input[type=email] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  /* Overwrite default styles of hr */
-  hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-  }
-  /* Set a style for the submit button */
-  .registerbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-  }
-  .registerbtn:hover {
-    opacity: 1;
-  }
-  /* Add a blue text color to links */
-  a {
-    color: dodgerblue;
-  }
-  h1 {
-    color: white;
-  }
-  /* Set a grey background color and center the text of the "sign in" section */
-  .signin {
-    background-color: #f1f1f1;
-    text-align: center;
-  }
-  /*--------------------- Modal in index page information about me ---------------------*/
+    /*--------------------- Modal in index page information about me ---------------------*/
 
-  /* Centering edit comment box */
-  .center {
-    margin: auto;
-    width: 100%;
-    padding: 10px;
-  }
-  /* The Modal (background) */
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-  }
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-</style>
-
-<body>
-  <h1>famjunto</h1>
-  <div class="container">
-    <div class="row">
-      <h2 style="text-align:center">Bienvenido a famjunto, un lugar donde la familia puede comunicarse y compartir experiencias cotidianas.</h2>
-      <!-- Trigger/Open The Modal -->
-      <button id="myBtn">Quien soy yo?</button>
-      <!-- The Modal -->
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <P>Mi nombre es Efrain olivera ramirez.</P>
-          <P>Soy un desarrollador web de pila completa, familiarizado con HTML, CSS, JavaScript, Python / flask, Ruby & Rails / vagrant, Mean / node.js, Express / Mongo / Angular. Frameworks y lenguajes de programación, soy autodidacta y recientemente completé un bootcamp de codificación.</P>
-          <p>Este proyecto / aplicación es una aplicación de redes sociales, donde familiares / amigos pueden comunicarse y compartir experiencias cotidianas. La aplicación se ha creado con Html / css, plantillas W3.css, javaScript como parte frontal y Ruby & Rails como parte posterior. La aplicación se ejecuta en AWS, ubuntub OS y se publica como la base de datos.</p>
-          <p>Nota: La aplicación está al 50% de finalización, las pruebas y actualizaciones están actualmente en proceso. Gracias</p>
-        </div>
-      </div>
-      <div class="col">
-        <strong style="color: red"><%= flash[:notice] %></strong>
-        <div class="container">
-          <h2>Iniciar sesión</h2>
-          <p>Rellene el correo electrónico y la contraseña para iniciar sesión.</p>
-          <form action="/land" method="POST">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <label for="name"><b>Email</b></label>
-            <input type="email" name="email" placeholder="Email" required>
-            <label for="name"><b>Contraseña</b></label>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="submit" value="Login">
-          </form>
-        </div>
-      </div>
-      <strong style="color: red"><h2><%= flash[:denied] %></h2></strong>
-      <div class="vl">
-        <span class="vl-innertext">or</span>
-      </div>
-      <div class="col">
-        <!-- Registration form section -->
-        <strong style="color: red"><%= flash[:error] %></strong>
-        <div class="container">
-          <h2>Registro</h2>
-          <p>Rellene este formulario para crear una cuenta.</p>
-          <hr>
-          <form class="logreg" action="/registration" method="POST">
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-            <!-- Name input and connection -->
-            <label for="name"><b>Nombre</b></label>
-            <input type="username" placeholder="Ingrese su nombre" name="user[name]" required>
-            <!-- Email input and location -->
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Ingrese Email" name="user[email]" required>
-            <!-- Password inout and location -->
-            <label for="psw"><b>Contraseña</b></label>
-            <input type="password" placeholder="Ingrese contraseña" name="user[password]" required>
-            <!-- Password confirmationa and connection  -->
-            <label for="psw-repeat"><b>Repite la contraseña</b></label>
-            <input type="password" placeholder="Repite contraseña" name="user[password_confirmation" required>
-            <strong style="color: red"><%= flash[:password] %></strong>
-            <hr>
-            <input type="submit" class="btn btn-primary">
-          </form>
+    /* Centering edit comment box */
+    .center {
+      margin: auto;
+      width: 100%;
+      padding: 10px;
+    }
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <h1>famunion</h1>
+    <div class="container">
+      <div class="row">
+        <h2 style="text-align:center">Welcome to Famunion a place where family can communicate and share day to day experiences</h2>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Who am I?</button>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <P>My name is Efrain olivera</P>
+            <P>I'm a full stack web developer, familiar with HTML, CSS, JavaScript, Python/flask, Ruby&Rails/vagrant, Mean/node.js/Express/Mongo/Angular which are all frameworks and programming languages, I'm self taught and recently completed a coding bootcamp.</P>
+            <p>This project/app is a social media place where family/friends can communicate and share day to day experiences. The App has been created with Html/css, W3.css templates, javaScript as front end and Ruby&Rails, vagrant as the back end</p>
+            <p>Note: App is at 50% completion, testing and updates are currently in process. Thank you</p>
           </div>
+        </div>
+        <div class="col">
+          <strong style="color: red"><%= flash[:notice] %></strong>
+          <div class="container">
+            <h2>Login</h2>
+            <p>Fill email and password to login.</p>
+            <form action="/land" method="POST">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <label for="name"><b>Email</b></label>
+              <input type="email" name="email" placeholder="Email" required>
+              <label for="name"><b>Password</b></label>
+              <input type="password" name="password" placeholder="Password" required>
+              <input type="submit" value="Login">
+            </form>
+          </div>
+        </div>
+        <strong style="color: red"><h2><%= flash[:denied] %></h2></strong>
+        <div class="vl">
+          <span class="vl-innertext">or</span>
+        </div>
+        <div class="col">
+          <!-- Registration form section -->
+          <strong style="color: red"><%= flash[:error] %></strong>
+          <div class="container">
+            <h2>Register</h2>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+            <form class="logreg" action="/registration" method="POST">
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+              <!-- Name input and connection -->
+              <label for="name"><b>Name</b></label>
+              <input type="username" placeholder="Name" name="user[name]" required>
+              <!-- Email input and location -->
+              <label for="email"><b>Email</b></label>
+              <input type="email" placeholder="Email" name="user[email]" required>
+              <!-- Password inout and location -->
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Password" name="user[password]" required>
+              <!-- Password confirmationa and connection  -->
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Password" name="user[password_confirmation" required>
+              <strong style="color: red"><%= flash[:password] %></strong>
+              <hr>
+              <input type="submit" class="btn btn-primary">
+            </form>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
   <script>
     // Get the modal
     var modal = document.getElementById("myModal");

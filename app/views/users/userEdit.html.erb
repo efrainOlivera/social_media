@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-	<title>W3.CSS Template</title>
 	<meta charset="UTF-8">
+	<title>user edit page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-green.css">
 	<style>
 		html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 		.button {
@@ -93,6 +94,54 @@
 			display:inline-block;
 			padding: 0 0 0 0px;
 		}
+		input#image7[type=checkbox] + label
+		{
+			background-image: url(/assets/boy.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image8[type=checkbox] + label
+		{
+			background-image: url(/assets/lady.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image9[type=checkbox] + label
+		{
+			background-image: url(/assets/lady2.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image10[type=checkbox] + label
+		{
+			background-image: url(/assets/man.jpeg);
+			background-size: 60px 60px;
+			border-radius: 30px;
+			border-color: white;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
 		input#image1[type=checkbox]:checked + label
 		{
 			border-color: red;
@@ -147,6 +196,42 @@
 			display:inline-block;
 			padding: 0 0 0 0px;
 		}
+		input#image7[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image8[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image9[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
+		input#image10[type=checkbox]:checked + label
+		{
+			border-color: red;
+			border-style: solid;
+			height: 60px;
+			width: 60px;
+			display:inline-block;
+			padding: 0 0 0 0px;
+		}
 	</style>
 	<body class="w3-theme-l5" style="">
 		<a href="/land" class="w3-button w3-theme">Home</a>
@@ -171,6 +256,10 @@
 	        		<input type="checkbox" name="user[avatar]" id="image4" value="guy1.jpeg"/><label for="image4"></label>
 	        		<input type="checkbox" name="user[avatar]" id="image5" value="cartoon.jpeg"/><label for="image5"></label>
 	        		<input type="checkbox" name="user[avatar]" id="image6" value="bananas.jpeg"/><label for="image6"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image7" value="boy.jpeg"/><label for="image7"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image8" value="lady.jpeg"/><label for="image8"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image9" value="lady2.jpeg"/><label for="image9"></label>
+	        		<input type="checkbox" name="user[avatar]" id="image10" value="man.jpeg"/><label for="image10"></label>
 	        	</div>
 	        	<div class="form-group">
 	        		<label>Name</label>
